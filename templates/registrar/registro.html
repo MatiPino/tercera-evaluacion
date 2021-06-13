@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% block titulo %}
+Nuevo Usuario
+{% endblock %}
+{% block Contenidos %}
+<section class="row mt-3 mx-auto">
+    <article class="card col-md-6 col-sm-12 col-xl-5 mx-auto">
+        <section class="card-body">
+            <h3 class="card-title text-center">Nuevo registro</h3>
+            <form method="POST">
+                {% csrf_token %}
+                {% for campo in formulario %}
+                    <div class="form-group col-md-12">
+                        <label for="{{campo.id_for_label}}">{{campo.label}}</label>
+                        {{campo}}
+                    </div>
+                    {% if campo.errors %}
+                    <span class="text-muted">
+                        {{campo.errors}}
+                    </span>
+                    {% endif %}
+                {% endfor %}
+                <div class="from-group col-md-12">
+                    <input type="submit" class="btn btn-block btn-success" value="Registrarme">
+                </div>    
+            </form>
+        </section>
+    </article>
+</section>
+{% endblock %}
