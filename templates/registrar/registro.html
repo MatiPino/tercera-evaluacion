@@ -3,10 +3,10 @@
 Nuevo Usuario
 {% endblock %}
 {% block Contenidos %}
-<section class="row mt-3 mx-auto">
+<section id="registro" class="row mt-3 mx-auto">
     <article class="card col-md-6 col-sm-12 col-xl-5 mx-auto">
         <section class="card-body">
-            <h3 class="card-title text-center">Nuevo registro</h3>
+            <h3 class="card-title text-center">Nuevo Usuario</h3>
             <form method="POST">
                 {% csrf_token %}
                 {% for campo in formulario %}

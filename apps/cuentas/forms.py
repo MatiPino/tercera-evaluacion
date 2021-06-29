@@ -1,8 +1,6 @@
 from django.contrib.auth import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
-from django.forms import widgets
-from django.http import request
 
 def agregarFormControl(campos):
     for camposVisibles in campos:
@@ -15,19 +13,12 @@ class RegistroUsuario(UserCreationForm):
 
     class Meta:
         model = User
-        fields = (
-            'username', 
-            'first_name',
-            'last_name',
-            'email',
-            'password1',
-            'password2'
-        )
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
 
 class IniciarSesion(AuthenticationForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(request=request*args, **kwargs)
+    def __init__(self, request , *args , **kwargs):
+        super().__init__(request=request, *args, **kwargs)
         agregarFormControl(self.visible_fields())
 
     class Meta:
-        fields = ('username', 'password')     
+        fields = ('username','password')     

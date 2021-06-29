@@ -1,5 +1,5 @@
 {% extends 'base/base.html' %}
-{% block Contenido %}
+{% block Contenidos %}
 <body>
 <section class="seccion-perfil-usuario">
     <div class="perfil-usuario-header">
@@ -11,20 +11,20 @@
     </div>
     <div class="perfil-usuario-body">
         <div class="perfil-usuario-bio">
-            <h3 class="titulo">Nombre de usuario</h3>
+            <h3 class="titulo">{{user.username}}</h3>
         </div>
         <div class="perfil-usuario-footer">
             <ul class="lista-datos">
-                <li><i class="icon-image"></i>Nombre completo:</li>
-                <li><i class="icon-image"></i>Correo electronico:</li>
+                <li><i class="fas fa-ghost"></i> Nombre completo: {{user.get_full_name}}</li>
+                <li><i class="far fa-envelope"></i> Correo electronico: {{user.email}}</li>
             </ul>
         </div>
         <div class="redes-sociales">
-            <a href="" class="boton-redes facebook"><i class="bi bi-facebook"></i></a>
-            <a href="" class="boton-redes twitter"><i class="bi bi-twitter"></i></a>
-            <a href="" class="boton-redes instagram"><i class="bi bi-instagram"></i></a>
+            <a href="" class="boton-redes facebook"><i class="fab fa-facebook"></i></a>
+            <a href="" class="boton-redes twitter"><i class="fab fa-whatsapp"></i></a>
+            <a href="" class="boton-redes instagram"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </section>
 </body>
-{% endblock Contenido %}
+{% endblock %}

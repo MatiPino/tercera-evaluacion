@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block Contenidos %}
+<div class="d-flex justify-content-center">
+<a class="boton1 btn btn-dark" href="{% url 'principal' %}">
+Ver Juegos
+</a>
+<a class="boton1 btn btn-dark" href="{% url 'agregar' %}">
+Agregar Juegos
+</a>
+<a class="boton1 btn btn-dark" href="{% url 'categoria' %}">
+Agregar Categoria
+</a>
+</div>
+{% endblock %}

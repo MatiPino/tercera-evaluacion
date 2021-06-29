@@ -9,7 +9,7 @@ class Perfil(models.Model):
     def __str__(self):
         return self.usuario.username
 @receiver(post_save, sender=User)
-def actualizar_perfil(sender, instance, create, **kwargs):
-    if create:
+def actualizar_perfil(sender, instance, created, **kwargs):
+    if created:
         Perfil.objects.create(usuario = instance)
     instance.perfil.save()

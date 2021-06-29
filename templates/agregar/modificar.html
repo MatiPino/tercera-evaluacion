@@ -1,0 +1,18 @@
+{% extends 'base/base2.html' %}
+
+{% block titulo %} 
+{{titulo}} 
+{% endblock %}
+
+{% block Contenidos %}
+
+<h4>{{titulo}}</h4>
+<form class ="formulario bg-dark text-light" method="POST">
+    {% csrf_token %}
+    {{formulario.as_p}}
+    <input class="boton" type="submit" value="{{titulo}}">
+<a href="{% url 'index' %}">
+<input class="boton mt-2" type="button" value="Ver Juegos">
+</a>
+</form>
+{% endblock %}

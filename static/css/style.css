@@ -4,9 +4,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-    
 body{
-    font-family: 'Amaranth', sans-serif;
+    cursor:url('../img/cursor.png'), auto;
+    font-family: 'Amaranth', sans-serif;  
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #fondo{
     position: fixed;
@@ -60,11 +65,9 @@ body{
     color: white;
     font-size: 24px;
 }
-
-/* i,a, button{
+i,a, button{
     cursor:url('../img/mano.png'), pointer;
-} */
-
+}
 .logo h1{
     color: #fff;
     font-weight: 400;
@@ -126,7 +129,6 @@ body{
 ::-webkit-input-placeholder{
     color: #a1a1a1;
 }
-
 .btn-busqueda{
     position: relative;
     left: -20px;
@@ -136,6 +138,79 @@ body{
     border-radius: 50%;
     outline:none;
 }
+/*Agregar Juego*/
+h4 {
+    margin: auto;
+    width: 20%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    display: block;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: rgba(114, 114, 114, 0.8);
+    padding: 10px;
+}
+#formularioA {
+    margin: auto;
+    width: 50%;
+    border:1px solid rgba(255 , 255, 255,.1);
+    border-radius: 20px;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0,0,0,.2);
+    padding: 20px 30px;
+    
+}
+.bg-dark {
+    background-color: #343a4080 !important;
+}
+#tablaP{
+    margin: auto;
+}
+
+label {
+    font-weight: bold;
+    font-size: 16px;
+}
+.boton1,
+.boton {
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.boton1 {
+    margin: 0 10px;
+    padding: 10px;
+}
+.texto {
+    height: 80px !important;
+}
+.tabla {
+    width: 60%;
+}
+.fila{
+    max-width: 30px;
+}
+.boton1:hover {
+    text-decoration: none;
+    color: white;
+}
+.borrar {
+    color: white;
+    transition: color 0.3s ease;
+}
+.borrar:hover {
+    color: rgb(253, 68, 68);
+}
+::-webkit-input-placeholder { color: white !important; } 
+:-moz-placeholder { /* Firefox 18- */ color: white !important;  } 
+::-moz-placeholder { /* Firefox 19+ */ color: white !important; } 
+:-ms-input-placeholder { color: white !important;  }
+/*Registro*/
+
 /*perfil*/
 .seccion-perfil-usuario .perfil-usuario-body,
 .seccion-perfil-usuario {

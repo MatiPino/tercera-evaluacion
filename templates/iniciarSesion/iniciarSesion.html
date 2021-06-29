@@ -1,12 +1,13 @@
 {% extends 'base/base.html' %}
 {% block titulo %}
     Bienvenido
-{% endblock title %}
-{% block Contenido %}
+{% endblock %}
+
+{% block Contenidos %}
 <section class = "row mt-3">
     <article class="card col-md-6 col-sm-12 offset-md-3">
         <section class="card-body">
-            <h3> class="card-title text-center"
+            <h3 class="card-title text-center">
                 Bienvenido
             </h3>
             <form method="POST">
@@ -15,24 +16,20 @@
                     <div class="form-group col-md-12">
                         <label for="{{campo.id_for_label}}">{{campo.label}}</label>
                         {{campo}}
-                            {%if campo.errors%}
-                            <span class= "text-muted">
-                                {%campo.errors%}
-
-                            </span>
-                            {%endif%}
+                        {%if campo.errors%}
+                        <span class= "text-muted">
+                            {{campo.errors}}
+                        </span>
+                        {%endif%}
                     </div>
                 {%endfor%}
                 <div class="form-group col-md-12">
                     <input type="submit" class="btn btn-primary btn-block" value="Iniciar sesion">
                 </div>
-
             </form>
         </section>
     </article>
-
 </section>
-
-{% endblock Contenido %}
+{% endblock %}
 
  
