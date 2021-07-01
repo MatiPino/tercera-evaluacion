@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'projecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'juegos' , 'USER': 'root' , 'PASSWORD': 'root', 'HOST': 'localhost', 'PORT': '3306'
+        'NAME': 'juegos' , 'USER': 'vargas' , 'PASSWORD': 'svargas123', 'HOST': 'localhost', 'PORT': '3306'
     }
 }
 

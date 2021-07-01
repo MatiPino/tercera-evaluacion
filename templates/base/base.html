@@ -19,8 +19,8 @@
                 <div class = "logo">
                     <a href="/" class="texto-logo"><h1>Top Games</h1></a>
                 </div>
-                <form class="busqueda" id="search">
-                    <input class="barra-busqueda" type="text" placeholder="Buscar juego">
+                <form class="busqueda" id="search" action="{% url 'buscarJuegos' %}" method='get'>
+                    <input class="barra-busqueda" type="text" placeholder="Buscar juego" name='gameTitle' value=''>
                     <button class="btn-busqueda" type="submit"><i class="fas fa-search"></i></button>
                 </form>
 
@@ -38,7 +38,7 @@
         </header>
        
     {% block Contenidos %}
-
+    
     {% endblock %} 
     </div> 
     </body>

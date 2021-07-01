@@ -34,6 +34,7 @@ body{
 }
 .contenedor-principal{
     position: absolute;
+    top: 0;
     width: 100%;
     min-height: 100vh;
     z-index: 10;
@@ -65,7 +66,7 @@ body{
     color: white;
     font-size: 24px;
 }
-i,a, button{
+a, button{
     cursor:url('../img/mano.png'), pointer;
 }
 .logo h1{
@@ -319,4 +320,64 @@ label {
 }
 .seccion-perfil-usuario .boton-redes.instagram {
     background: linear-gradient(45deg, #FF2DFD, #40A7FF);
+}
+
+.contenedor-juegos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game-box{
+    width: 20%;
+    margin: 2rem 1rem;
+    background-color: rgba(0,0,0,.2);
+    border:1px solid rgba(255 , 255, 255,.1);
+    padding: 20px;
+    border-radius: 15px;
+    color:white;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.game-img{
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.game-title{
+    word-wrap: break-word;
+    font-size: 24px;
+    font-weight: bolder;
+}
+.game-price{
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+.img-avatar{
+    width: 180px;
+    border-radius: 50%;
+}
+
+@media (max-width:1180px){
+
+    .game-box{
+        width: 30%;
+    }
+}
+@media (max-width:900px){
+
+    .game-box{
+        width: 45%;
+    }
+}
+@media (max-width:785px){
+
+    .game-box{
+        width: 100%;
+    }
 }

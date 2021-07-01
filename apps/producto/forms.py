@@ -2,6 +2,7 @@ from django import forms
 from django.forms import widgets
 from .models import Producto
 
+
 class FormularioProducto(forms.ModelForm):
     class Meta:
         model = Producto
@@ -19,5 +20,5 @@ class FormularioProducto(forms.ModelForm):
                 'class': 'precio form-control bg-secondary text-light',
                 'type': 'number',
                 'placeholder': 'Ingresa el precio del juego'
-            }),
+            })
         }

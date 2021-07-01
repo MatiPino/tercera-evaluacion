@@ -16,23 +16,23 @@ Juegos
     </tr>
   </thead>
   <tbody>
-  {% for producto in productos %} 
+  {% for juego in Juegos %} 
     <tr>
-      <th scope="row">{{producto.id}}</th>
-      <td>{{producto.nombre_juego}}</td>
-      <td>{{producto.precio_juego}}</td>
-      {% for categoria in categorias %}
-      {% if categoria.id == producto.categoria_id %}
+      <th scope="row">{{juego.id}}</th>
+      <td>{{juego.nombre_juego}}</td>
+      <td>{{juego.precio_juego}}</td>
+      {% for categoria in Categorias %}
+      {% if categoria.id == juego.categoria_id %}
       <td>{{categoria.nombre_categoria}}</td>
       {% endif %}
       {% endfor %}
       <td>
-      <a class="borrar" href="{% url 'eliminarP' producto.id %}">
+      <a class="borrar" href="{% url 'eliminarP' juego.id %}">
       <i class="fas fa-trash-alt"></i>
       </a>
       </td> 
       <td>
-          <a href="{% url 'modificar_producto' producto.id %}">
+          <a href="{% url 'modificar_producto' juego.id %}">
           <i class="fas fa-pen"></i>
           </a>
       </td>

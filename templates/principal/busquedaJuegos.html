@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}
+    {{titulo}}
+{% endblock %}
+
+{% block Contenidos %}
+    <div class='container'> 
+        <div class='contenedor-juegos'>
+        {% for juego in juegos %} 
+        
+            <article class='game-box'>
+                <img src="{{juego.thumb}}" class='game-img'>
+                <div>
+                    <h1 class='game-title'>{{juego.external}}</h1>
+                    <p class='game-price'>Precio: ${{juego.cheapest}} USD</p>                                
+                </div>
+                {% if user.is_authenticated %}
+                    <button class='btn btn-success'>Agregar al carrito</button>
+                {% else %}
+                    <a href="{% url 'iniciarSesion' %}" class='btn btn-success'>Iniciar sesión</a>
+                {% endif %}
+            </article>
+
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
