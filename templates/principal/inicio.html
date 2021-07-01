@@ -1,13 +1,69 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block titulo %}
     {{titulo}}
 {% endblock%}
 
 {% block Contenidos %}
-    <div class='container'>
-        
-    {{titulo}}
+        <main class="contenedor">
+            <div class="imagen-principal">
+                <div class="oscuro">
+                    <h1>Valheim</h1>
+                    <p>¡Lucha, construye y conquista tu viaje en una saga digna de la bendición de Odin!</p>
+                </div>
+            </div>
+            <div class="juegos-secundarios">
+                <div class = "imagen-juego1">
+                    <div class="oscuro1">
+                        <h3>Ark</h3>
+                        <p>ARK Survival Evolved nos traslada a una isla paradisíaca donde encontraremos dinosaurios, tribus y otros supervivientes.</p>
+                    </div>
+                </div>
+                <div class = "imagen-juego2">
+                    <div class="oscuro2">
+                        <h3>Metin 2</h3>
+                        <p>¡Triunfa en un fascinante mundo de aventuras en el Lejano Oriente! Lucha por el Dios Dragón. Comienza tu aventura.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='titulo-juegos'>
+                <h2 class="titulo">Juegos TOP</h2>
+                <hr>
+                
+                <div class="top-juegos">
+                    <div class="juego">
+                        <div class="img-juego"></div>
+                        <h3 class="juego-titulo">Minecraft</h3>
+                    </div>
+                    <div class="juego">
+                        <div class="img-juego"></div>
+                        <h3 class="juego-titulo">Rust</h3>
+                    </div>
+                    <div class="juego">
+                        <div class="img-juego"></div>
+                        <h3 class="juego-titulo">Counter-Strike Global Offensive</h3>
+                    </div>
+                    <div class="juego">
+                        <div class="img-juego"></div>
+                        <h3 class="juego-titulo">Among Us</h3>
+                    </div>      
+                    <div class="juego">
+                        <div class="img-juego"></div>
+                        <h3 class="juego-titulo">Phasmophobia</h3>
+                    </div>      
+                    <div class="juego">
+                        <div class="img-juego"></div>
+                        <h3 class="juego-titulo">Dark Souls III</h3>
+                    </div>   
+                    <div class="juego">
+                        <div class="img-juego"></div>
+                        <h3 class="juego-titulo">Diablo IV</h3>
+                    </div>     
+                         
+                </div>
+            </div>
 
-    </div>
+        </main>
 {% endblock %}
