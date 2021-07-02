@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.cuentas',
     'apps.categoria',
     'apps.producto',
+    'apps.cart',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -83,7 +85,7 @@ WSGI_APPLICATION = 'projecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'juegos' , 'USER': 'vargas' , 'PASSWORD': 'svargas123', 'HOST': 'localhost', 'PORT': '3306'
+        'NAME': 'juegos' , 'USER': 'root' , 'PASSWORD': 'root', 'HOST': 'localhost', 'PORT': '3306'
     }
 }
 
