@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'apps.cuentas',
     'apps.categoria',
     'apps.producto',
-    'apps.cart',
+    'apps.carrito',
 ]
 
 MIDDLEWARE = [
@@ -129,7 +129,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     join(BASE_DIR, 'static'),
-)
+    )
 STATIC_ROOT = join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
@@ -139,3 +139,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LIGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/iniciar-sesion/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = join(BASE_DIR, 'media') 

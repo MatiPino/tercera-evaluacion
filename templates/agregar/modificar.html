@@ -7,7 +7,8 @@
 {% block Contenidos %}
 
 <h4>{{titulo}}</h4>
-<form class ="formulario bg-dark text-light" method="POST">
+<form id="formularioA" class ="formulario bg-dark text-light" method="POST" enctype="multipart/form-data">
+<a class="botonVolver1 btn btn-dark" href="{% url 'principal' %}"><i class="fas fa-chevron-circle-left"></i></a>
     {% csrf_token %}
     {{formulario.as_p}}
     <input class="boton" type="submit" value="{{titulo}}">

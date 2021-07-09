@@ -11,7 +11,7 @@ import requests
 def agregar(request):
     formularioP = FormularioProducto()
     if request.method == 'POST':
-        formularioP = FormularioProducto(request.POST)
+        formularioP = FormularioProducto(request.POST,request.FILES)
         if formularioP.is_valid():
             formularioP.save()
             return redirect('principal')
@@ -20,7 +20,6 @@ def agregar(request):
         'titulo': 'Agregar Juego'
     }
     return render(request, 'agregar/producto.html', context)
-
 
 @login_required
 def principal(request):
@@ -62,8 +61,7 @@ def modificar_producto(request, producto_id):
         'formulario': FormularioProducto(instance=producto)
     }
     if request.method == 'POST':
-        formulario = FormularioProducto(
-            data=request.POST, instance=producto, files=request.FILES)
+        formulario = FormularioProducto(data=request.POST, instance=producto, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
             return redirect('principal')

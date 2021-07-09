@@ -26,12 +26,14 @@
 
                 <nav class= "menu" id="menu">
                 {% if user.is_authenticated %}
-                    <a href= "/juegos"> Juegos </a>                
-                    <a href= "/perfil"> Mi perfil </a>
-                    <a href="/salir"> Salir </a>
+                    <a href="/"><i class="fas fa-home"></i> Inicio</a>
+                    <a href= "/juegos"><i class="fas fa-ghost"></i> Juegos </a>
+                    <a href="/carrito"><i class="fas fa-shopping-cart"> Carrito</i></a>                
+                    <a href= "/perfil"><i class="fas fa-user"></i> Perfil </a>
+                    <a href="/salir"><i class="fas fa-sign-out-alt"></i> Salir </a>
                 {% else %}
-                    <a href= "/iniciar-sesion"> Iniciar sesión </a>                
-                    <a href= "/registro"> Registrarse </a>
+                    <a href= "/iniciar-sesion"><i class="far fa-user"></i> Iniciar sesión </a>                
+                    <a href= "/registro"><i class="fas fa-gamepad"></i> Registrarse </a>
                 {% endif %}
                 </nav>
             </div>
@@ -43,9 +45,14 @@
 
 
     <footer>
-        <p>© 2021 Top Games. Todos los derechos reservados.</p>
+        {% if user.is_authenticated %}
+        <p>© 2021 Top Games. Todos los derechos reservados.</p>           
+        {% else %}
+        <p></p>
+        {% endif %}     
     </footer>
 
     </div> 
+    <script src="{% static 'js/script.js' %}"></script>
     </body>
 </html>

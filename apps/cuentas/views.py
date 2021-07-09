@@ -37,7 +37,7 @@ def iniciarSesion(request):
         usuario = authenticate(username=usuario, password = contrasena)
         if usuario is not None:
             login(request, usuario)
-            return redirect('principal')
+            return redirect('inicio')
 
     contexto = {
         'formulario': formulario

@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block Contenidos %}
-    <div class='container'> 
+    <div class='container'>
+        <a class="botonVolver1 btn btn-dark" href="{% url 'juegos' %}"><i class="fas fa-chevron-circle-left"></i></a>   
         <div class='contenedor-juegos'>
+        
         {% for juego in juegos %} 
         
             <article class='game-box'>

@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block Contenidos %}
-
 <h4>{{titulo}}</h4>
 <form id="formularioA" class ="formulario bg-dark text-light" method="POST" enctype="multipart/form-data">
+<a class="botonVolver btn btn-dark" href="{% url 'juegos' %}"><i class="fas fa-chevron-circle-left"></i></a>
     {% csrf_token %}
     {{formulario.as_p}}
     <input class="boton" type="submit" value="{{titulo}}">

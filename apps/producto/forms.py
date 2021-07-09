@@ -7,9 +7,11 @@ class FormularioProducto(forms.ModelForm):
     class Meta:
         model = Producto
         fields = [
+            'imagen',
             'nombre_juego',
             'precio_juego',
-            'categoria'
+            'categoria',
+            'cantidad'
         ]
         widgets = {
             'nombre_juego': forms.TextInput(attrs={
