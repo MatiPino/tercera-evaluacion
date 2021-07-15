@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #Apps propias
+    # Dependencia REST
+    'rest_framework',
+    # Apps propias
     'apps.cuentas',
     'apps.categoria',
     'apps.producto',

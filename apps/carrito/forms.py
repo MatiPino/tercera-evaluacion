@@ -6,7 +6,7 @@ from .models import Total
 class FormularioTotal(forms.ModelForm):
     class Meta:
         model = Total
-        fields = '__all__'
+        fields = 'cantidad'
         widgets={
         'cantidad':forms.NumberInput(attrs={
             'min': 1, 'max': 10, 'value': 1
