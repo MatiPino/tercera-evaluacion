@@ -45,6 +45,11 @@ INSTALLED_APPS = [
     'apps.categoria',
     'apps.producto',
     'apps.carrito',
+    # aplicaciones Api
+    'api.apiCarrito',
+    'api.apiCategoria',
+    'api.apiCuentas',
+    'api.apiProducto',
 ]
 
 MIDDLEWARE = [
