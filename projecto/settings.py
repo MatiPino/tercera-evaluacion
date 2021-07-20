@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Dependencia REST
     'rest_framework',
+    'rest_framework.authtoken',    
     # Apps propias
     'apps.cuentas',
     'apps.categoria',
@@ -51,7 +52,14 @@ INSTALLED_APPS = [
     'api.apiCuentas',
     'api.apiProducto',
 ]
+#configuracion para REST_FRAMEWORK
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication'
+
+    ]
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -92,7 +100,7 @@ WSGI_APPLICATION = 'projecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'juegos' , 'USER': 'root' , 'PASSWORD': 'root', 'HOST': 'localhost', 'PORT': '3306'
+        'NAME': 'jueguitos' , 'USER': 'Manuel' , 'PASSWORD': 'Oracle.1234567890', 'HOST': '127.0.0.1', 'PORT': '3306'
     }
 }
 

@@ -4,6 +4,8 @@ from .serializers import PerfilOrganizado
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.core.exceptions import ObjectDoesNotExist
+from rest_framework.authtoken.models import Token
+from django.contrib.auth import authenticate
 # Create your views here.
 
 @api_view(['GET'])
@@ -49,3 +51,26 @@ def perfilBorrado(request, id):
         return Response(data = None, status = 404)
     perfilObtener.delete()
     return Response(data = None, status = 200)   
+
+@api_view(['POST'])
+def iniciar_sesion(request):
+
+    if request.user.is_authenticated:
+        return Response(data={'mensaje':'usuario logeado'}, status=403)
+
+    username = request.data ['username']
+    password = request.data ['password'] 
+    usuarioEncontrado = authenticate(username= username, password= password)
+
+    if usuarioEncontrado is not None:
+        respuesta = {}
+        Token = ''
+        try:
+            Token = Token.objects.get(user_id=usuarioEncontrado.id)
+        except Token.DoesNotExist:    
+            Token = Token.objects.create(user= usuarioEncontrado)
+
+        respuesta ['Token'] = Token.key
+        return Response(data=respuesta, status=200)
+
+    return Response(data=request.data, status=403)    
