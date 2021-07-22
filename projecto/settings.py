@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Dependencia REST
     'rest_framework',
-    'rest_framework.authtoken',    
+    'rest_framework.authtoken',
     # Apps propias
     'apps.cuentas',
     'apps.categoria',
@@ -52,12 +52,11 @@ INSTALLED_APPS = [
     'api.apiCuentas',
     'api.apiProducto',
 ]
-#configuracion para REST_FRAMEWORK
+# configuracion para REST_FRAMEWORK
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES':[
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication'
-
     ]
 }
 MIDDLEWARE = [
@@ -76,7 +75,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            join(BASE_DIR,'templates')
+            join(BASE_DIR, 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -85,7 +84,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                
+
             ],
         },
     },
@@ -100,7 +99,7 @@ WSGI_APPLICATION = 'projecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'juegos' , 'USER': 'root' , 'PASSWORD': 'root', 'HOST': '127.0.0.1', 'PORT': '3306'
+        'NAME': 'juegos', 'USER': 'vargas', 'PASSWORD': 'svargas123', 'HOST': '127.0.0.1', 'PORT': '3306'
     }
 }
 
@@ -144,7 +143,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     join(BASE_DIR, 'static'),
-    )
+)
 STATIC_ROOT = join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
@@ -155,4 +154,4 @@ LIGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/iniciar-sesion/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = join(BASE_DIR, 'media') 
+MEDIA_ROOT = join(BASE_DIR, 'media')

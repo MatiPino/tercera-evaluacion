@@ -1,16 +1,9 @@
 {% extends 'base/base.html' %}
 
 {% block Contenidos %}
-<a class="botonVolver2 btn btn-dark" href="{% url 'inicio' %}"><i class="fas fa-chevron-circle-left"></i></a>  
-<div class="d-flex justify-content-center">
-<a class="boton1 btn btn-dark" href="{% url 'principal' %}">
-Ver Juegos
-</a>
-<a class="boton1 btn btn-dark" href="{% url 'agregar' %}">
-Agregar Juegos
-</a>
-<a class="boton1 btn btn-dark" href="{% url 'categoria' %}">
-Agregar Categoria
-</a>
+<div class="d-flex justify-content-center mt-5">
+    <a class="boton1 btn btn-dark" href="{% url 'principal' %}">Ver Juegos</a>
+    <a class="boton1 btn btn-dark" href="{% url 'agregar' %}">Agregar Juegos</a>
+    <a class="boton1 btn btn-dark" href="{% url 'categoria' %}">Agregar Categoria</a>
 </div>
 {% endblock %}

@@ -6,6 +6,8 @@ from .models import Perfil
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
+
 def registro(request):
     formulario = None
     if request.method == 'POST':
@@ -19,13 +21,16 @@ def registro(request):
         formulario = RegistroUsuario()
     contexto = {
         'formulario': formulario
-    }            
-    return render(request, 'registrar/registro.html', context= contexto)
+    }
+    return render(request, 'registrar/registro.html', context=contexto)
+
+
 @login_required
 def salir(request):
     if request.user.is_authenticated:
         logout(request)
-    return redirect('iniciarSesion')  
+    return redirect('iniciarSesion')
+
 
 def iniciarSesion(request):
     formulario = None
@@ -34,16 +39,19 @@ def iniciarSesion(request):
     if request.method == "POST":
         usuario = request.POST['username']
         contrasena = request.POST['password']
-        usuario = authenticate(username=usuario, password = contrasena)
+        usuario = authenticate(username=usuario, password=contrasena)
         if usuario is not None:
             login(request, usuario)
             return redirect('inicio')
+        else:
+            return redirect('iniciarSesion')
 
     contexto = {
         'formulario': formulario
     }
-    return render(request, 'iniciarSesion/iniciarSesion2.html', context=contexto) 
-    
+    return render(request, 'iniciarSesion/iniciarSesion2.html', context=contexto)
+
+
 @login_required
 def perfil(request):
-    return render(request, 'perfil/perfil.html')     
+    return render(request, 'perfil/perfil.html')

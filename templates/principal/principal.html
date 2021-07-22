@@ -2,9 +2,9 @@
 
 {% block Contenidos %}
     <div class='container'>
-     
+     <a class="botonVolver1 btn btn-dark" href="{% url 'juegos' %}"><i class="fas fa-chevron-circle-left"></i></a>
         <div class='contenedor-agregados'>
-        <a class="botonVolver1 btn btn-dark" href="{% url 'juegos' %}"><i class="fas fa-chevron-circle-left"></i></a> 
+         
         {% for juego in Juegos %} 
         
             <article class="juegos-box">
@@ -14,7 +14,7 @@
             <div class= "opciones-agregar">    
                 <div class= "info-juego">
                     <h1 class='game-title'>{{juego.nombre_juego}}</h1>
-                    <p class='game-price'>Precio: $ {{juego.precio_juego}} CL</p>
+                    <p class='game-price'>Precio: $ {{juego.precio_juego}} CLP</p>
                           {% for categoria in Categorias %}
                           {% if categoria.id == juego.categoria_id %}
                           <p>Categoria: {{categoria.nombre_categoria}}</p>
@@ -23,9 +23,9 @@
                     <p class='game-price'>Stock: {{juego.cantidad}}</p>                                  
                 </div>
               <div class="opciones-producto"> 
-              <a class="borrar btn btn-dark" href="{% url 'eliminarP' juego.id %}"><i class="fas fa-trash-alt"> Eliminar</i></a>
-              <a class="borrar btn btn-dark" href="{% url 'modificar_producto' juego.id %}"><i class="fas fa-pen"> Editar</i></a>
-              <a class="borrar btn btn-success" href="{% url 'carro' juego.id %}"><i class="fas fa-cart-arrow-down"> Añadir al carrito</i></a>
+              <a class="borrar btn btn-dark" href="{% url 'eliminarP' juego.id %}"><i class="fas fa-trash-alt"></i> Eliminar</a>
+              <a class="borrar btn btn-dark" href="{% url 'modificar_producto' juego.id %}"><i class="fas fa-pen"></i> Editar</a>
+              <a class="borrar btn btn-success" href="{% url 'carro' juego.id %}"><i class="fas fa-cart-arrow-down"></i> Añadir al carrito</a>
               </div> 
             </div>    
             </article>

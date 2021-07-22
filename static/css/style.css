@@ -148,15 +148,11 @@ a, button{
 /*Agregar Juego*/
 h4 {
     margin: auto;
-    width: 20%;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: 30px;
-    display: block;
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: rgba(114, 114, 114, 0.8);
-    padding: 10px;
+    padding-bottom: 20px;
+    
 }
 #formularioA {
     margin: auto;
@@ -165,8 +161,7 @@ h4 {
     border-radius: 20px;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
     background-color: rgba(0,0,0,.2);
-    padding: 20px 30px;
-    
+    padding: 20px 30px; 
 }
 .bg-dark {
     background-color: #343a4080 !important;
@@ -240,10 +235,7 @@ label {
     margin-bottom: auto;
     cursor: url('../img/mano.png'), auto;
 }
-.botonVolver2 {
-    margin-left: 580px;
-    cursor: url('../img/mano.png'), auto;
-}
+
 .texto {
     height: 80px !important;
 }
@@ -312,8 +304,14 @@ label {
 }
 
 /*perfil*/
-.seccion-perfil-usuario .perfil-usuario-body,
+.seccion-perfil-usuario .perfil-usuario-body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
 .seccion-perfil-usuario {
+    margin-top: 200px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -323,15 +321,12 @@ label {
     width: 100%;
     display: flex;
     justify-content: center;
-    background: linear-gradient(#8873ff, transparent);
     margin-bottom: 1.25rem;
 }
 .seccion-perfil-usuario .perfil-usuario-portada{
     display: block;
     position: relative;
     width: 90%;
-    height: 17rem;
-    background: linear-gradient(45deg, #bc3cff, #317fff);
     border-radius: 0 0 20px 20px;
 }
 .seccion-perfil-usuario .perfil-usuario-avatar {
@@ -665,34 +660,123 @@ main.contenedor{
 }
 
 footer {
-    position:absolute;
-    bottom: -50px;
-    margin-top:200px;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, .2);
-    color:white;
-    text-align: center;
+    position: absolute;
+        bottom: 0;
+        margin-top: 100px;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, .2);
+        color:white;
+        text-align: center;
 }
 
 @media (max-width:1180px){
-
+    .barra-busqueda{
+        width: 300px;
+    }
     .game-box{
         width: 30%;
     }
+    #formularioA {
+        width: 70%;
+    }
+    .tabla, .calculo-total {
+        width: 80%;
+    }
 }
-@media (max-width:900px){
-
+@media (max-width:942px){
+    .barra-busqueda{
+        width: 180px;
+    }
+    .juegos-secundarios{
+        flex-direction: column;
+    }
+    .imagen-juego1, .imagen-juego2 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
     .game-box{
         width: 45%;
     }
+    .juegos-box{
+        width: 40%;
+    }
+    .seccion-perfil-usuario .redes-sociales{
+        display: none;
+    }
 }
-@media (max-width:785px){
-
+@media (max-width:810px){
+    .container{
+        flex-direction: column;
+    }
+    .logo{
+        margin: 15px;
+    }
+    .barra-busqueda{
+        width: 300px;
+    }
     .game-box{
         width: 100%;
     }
+    .form-inicio-sesion, #registro{
+        margin-top: 50px;
+    }
+    h4 {
+        padding-top:50px;
+        padding-bottom: 20px;
+    }
 }
+@media (max-width:700px){
+    .oscuro{
+        padding: 20px 30px;
+    }
+    .imagen-principal p {
+        display: none;
+    }
+    .imagen-principal {
+        margin-top: 50px;
+        height: 340px;
+    }
+    .oscuro1 , .oscuro2 {
+        padding: 20px 30px;
+    }
+    .imagen-juego1 p, .imagen-juego2 p{
+        display: none;
+    }
+    .juegos-box{
+        width: 70%;
+    }
+    #formularioA {
+        width: 90%;
+    }
+}
+
+@media (max-width:520px){
+    .logo{
+        margin-top: 20px;
+    }
+    .container{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:460px){
+    .barra-busqueda{
+        width: 200px;
+    }
+}  
+
+@media (max-width:400px){
+    .imagen-principal h1{
+        font-size: 42px;
+    }
+    .imagen-juego1 h3, .imagen-juego2 h3{
+        font-size: 24px;
+    }
+    .form-inicio-sesion, #registro{
+        margin-top: 70px;
+    }
+}   
