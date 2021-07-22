@@ -48,3 +48,8 @@ def totalCarrito(usuario_id):
         total = total + (i.producto.precio_juego * i.cantidad)
     return total
 
+def carrito_cantidad(request, id):
+    carrito = Total.objects.get(id = id)
+    carrito.cantidad = request.POST["cantidad"]
+    carrito.save()
+    return redirect('carrito')

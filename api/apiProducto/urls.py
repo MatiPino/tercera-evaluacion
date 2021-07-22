@@ -11,7 +11,6 @@ urlpatterns = [
     path('editado/<int:id>/', productoModificado, name='editado'),
     path('borrado/<int:id>/', productoBorrado, name='borrado'),
     # Urls de cuentas
-    path('usuarios/', include('api.apiCuentas.urls')),
     path('usuario/', include('api.apiCuentas.urls')),
     # Utls de carrito
     path('carrito/', include('api.apiCarrito.urls'))

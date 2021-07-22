@@ -35,11 +35,12 @@ def categoriaBuscada(request, id):
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def categoriaAgregada(request):
-    categoriaAgregadas = CategoriaOrganizada(data = request.data)
+    categoriaAgregadas = CategoriaOrganizada(data = request.data, many = False)
     if categoriaAgregadas.is_valid():
         datos = categoriaAgregadas.save()
-        return Response(data = datos, status= 201)
-    return Response(data = None, status = 403)
+        categoriaAgregadas = CategoriaOrganizada(datos, many = False)
+        return Response(data = categoriaAgregadas.data, status= 201)
+    return Response(data = categoriaAgregadas.errors, status = 403)
 
 @api_view(['DELETE'])
 @authentication_classes([TokenAuthentication])

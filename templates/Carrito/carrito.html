@@ -19,24 +19,25 @@ Juegos
   </thead>
   <tbody id="tbody">
   {% for carrito in obtenido %}
+  <form method="POST" action="{% url 'carrito_cantidad' carrito.id %}">
+  {% csrf_token %}
     <tr>
       <th class="th-id" scope="row">{{carrito.producto.id}}</th>
       <td class="td-juegos"><img src="/media/{{carrito.producto.imagen}}" class="td-juegos" alt=""></td>
       <td class="td-nombre">{{carrito.producto.nombre_juego}}</td>
       <td class="td-precio">{{carrito.producto.precio_juego}}</td>
-      <td class="td-cantidad"><input type="number" {{carrito.cantidad}}><button type="submit">Aceptar</button></td>
+      <td class="td-cantidad"><input name="cantidad" type="number" value={{carrito.cantidad}} max={{carrito.producto.cantidad}}><button type="submit">Guardar</button></td>
       <td class="td-borrar"><a class="borrar" href="{% url 'elminar_carrito' carrito.id %}"><i class="fas fa-trash-alt"></i></a></td>
     </tr>
-  {% endfor %}    
+  </form>
+  {% endfor %} 
   </tbody>
 </table>
-<form action="FormularioTotal">
-</form>
 </div>
 <div class="calculo-total">
   <form action="" method="POST">
   {% csrf_token %}
   <button class="btn btn-success" type="submit"><i class="fas fa-shopping-cart"></i> Calcular Total: {{total}}</button>
-</form>
+</form> 
 </div>
 {% endblock %}
