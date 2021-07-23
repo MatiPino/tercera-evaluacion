@@ -40,4 +40,19 @@ Agregar Juego
 Agregar Categoria
 </a> 
 </div>
+<script>
+
+    let url = 'http://localhost:8000/api/producto/';
+    
+    fetch(url,{
+        method: 'GET',
+        mode: 'no-cors'
+    })
+      .then(Response => response.json())
+      .then(data => {
+          console.log(data);
+      })
+      .catch(error => console.log(error));
+
+</script>
 {% endblock %}

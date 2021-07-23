@@ -30,18 +30,31 @@
         </section>
     </article>
 </section>
-<script>
-    let url = ''
-    fetch(url)
-        .then(Response => response.json())
-        .then(data => mostrarData(data))
-        .catch(error => console.log(error))
-  
-    const mostrarData = (data) => {
-      console.log(data)
 
+<script>
+
+    let user= document.querySelector('#id_username');
+    let pass= document.querySelector('#id_password');
+
+    let datos = {
+        "username":user,
+        "password":pass
     }
-  </script>
+
+    let url = 'http://localhost:8000/api/usuario/iniciar/';
+    
+    fetch(url,{
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(datos)
+    })
+      .then(Response => response.json())
+      .then(data => {
+          console.log(data);
+      })
+      .catch(error => console.log(error));
+
+</script>
 {% endblock %}
 
  

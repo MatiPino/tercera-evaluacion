@@ -15,16 +15,4 @@
 <input class="boton mt-2" type="button" value="Ver Juegos">
 </a>
 </form>
-<script>
-    let url = ''
-    fetch(url)
-        .then(Response => response.json())
-        .then(data => mostrarData(data))
-        .catch(error => console.log(error))
-  
-    const mostrarData = (data) => {
-      console.log(data)
-
-    }
-  </script>
 {% endblock %}
